@@ -8,7 +8,6 @@ class AutonomusScore extends StatefulWidget {
 }
 
 class _AutonomusScoreState extends State<AutonomusScore> {
-
   @override
   Widget build(BuildContext context) {
     final scores = Provider.of<FinalScores>(context);
@@ -55,8 +54,8 @@ class _AutonomusScoreState extends State<AutonomusScore> {
                   scores.updateAutonomus(wobblesDelivered: val.round());
                 });
               },
-              min:0.0,
-              max:2.0,
+              min: 0.0,
+              max: 2.0,
               divisions: 2,
               label: scores.autoDetails.wobblesDelivered.toString(),
             ),
@@ -75,8 +74,8 @@ class _AutonomusScoreState extends State<AutonomusScore> {
                   scores.updateAutonomus(powershotsKnocked: val.round());
                 });
               },
-              min:0.0,
-              max:3.0,
+              min: 0.0,
+              max: 3.0,
               divisions: 3,
               label: scores.autoDetails.powershotsKnocked.toString(),
             ),
@@ -87,51 +86,74 @@ class _AutonomusScoreState extends State<AutonomusScore> {
           children: [
             SizedBox(width: 13),
             Text('Low Goal: '),
-            IconButton(icon: Icon(Icons.remove, color: Colors.green,), onPressed: () {
-              setState(() {
-                scores.updateAutonomus(lowGoal: scores.autoDetails.lowGoal -1);
-              },);
-            }),
+            IconButton(
+                icon: Icon(
+                  Icons.remove,
+                  color: Colors.green,
+                ),
+                onPressed: () {
+                  setState(
+                    () {
+                      scores.updateAutonomus(
+                          lowGoal: scores.autoDetails.lowGoal - 1);
+                    },
+                  );
+                }),
             Text(scores.autoDetails.lowGoal.toString()),
-            IconButton(icon: Icon(Icons.add, color: Colors.green), onPressed: () {
-              setState(() {
-                scores.updateAutonomus(lowGoal: scores.autoDetails.lowGoal +1);
-              });
-            }),
+            IconButton(
+                icon: Icon(Icons.add, color: Colors.green),
+                onPressed: () {
+                  setState(() {
+                    scores.updateAutonomus(
+                        lowGoal: scores.autoDetails.lowGoal + 1);
+                  });
+                }),
           ],
         ),
         Row(
           children: [
             SizedBox(width: 13),
             Text('Mid Goal: '),
-            IconButton(icon: Icon(Icons.remove, color: Colors.green), onPressed: () {
-              setState(() {
-                scores.updateAutonomus(midGoal: scores.autoDetails.midGoal -1);
-              });
-            }),
+            IconButton(
+                icon: Icon(Icons.remove, color: Colors.green),
+                onPressed: () {
+                  setState(() {
+                    scores.updateAutonomus(
+                        midGoal: scores.autoDetails.midGoal - 1);
+                  });
+                }),
             Text(scores.autoDetails.midGoal.toString()),
-            IconButton(icon: Icon(Icons.add, color: Colors.green), onPressed: () {
-              setState(() {
-                scores.updateAutonomus(midGoal: scores.autoDetails.midGoal +1);
-              });
-            }),
+            IconButton(
+                icon: Icon(Icons.add, color: Colors.green),
+                onPressed: () {
+                  setState(() {
+                    scores.updateAutonomus(
+                        midGoal: scores.autoDetails.midGoal + 1);
+                  });
+                }),
           ],
         ),
         Row(
           children: [
             SizedBox(width: 13),
             Text('High Goal: '),
-            IconButton(icon: Icon(Icons.remove, color: Colors.green), onPressed: () {
-              setState(() {
-                scores.updateAutonomus(highGoal: scores.autoDetails.highGoal -1);
-              });
-            }),
+            IconButton(
+                icon: Icon(Icons.remove, color: Colors.green),
+                onPressed: () {
+                  setState(() {
+                    scores.updateAutonomus(
+                        highGoal: scores.autoDetails.highGoal - 1);
+                  });
+                }),
             Text(scores.autoDetails.highGoal.toString()),
-            IconButton(icon: Icon(Icons.add, color: Colors.green), onPressed: () {
-              setState(() {
-                scores.updateAutonomus(highGoal: scores.autoDetails.highGoal +1);
-              });
-            }),
+            IconButton(
+                icon: Icon(Icons.add, color: Colors.green),
+                onPressed: () {
+                  setState(() {
+                    scores.updateAutonomus(
+                        highGoal: scores.autoDetails.highGoal + 1);
+                  });
+                }),
           ],
         ),
       ],
