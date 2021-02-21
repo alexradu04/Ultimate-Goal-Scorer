@@ -26,66 +26,77 @@ class _AutonomusScoreState extends State<AutonomusScore> {
           children: [
             SizedBox(width: 13),
             Text('Navigation: '),
-            FlatButton(
-              onPressed: () {
-                setState(() {
-                  if (scores.autoDetails.parkedRobots == 0)
-                    scores.updateAutonomus(parkedRobots: 1);
-                  else
-                    scores.updateAutonomus(parkedRobots: 0);
-                });
-              },
-              child: Text('Parked'),
-              color: scores.autoDetails.parkedRobots == 1
-                  ? Colors.green
-                  : Colors.grey,
-            )
+            Spacer(),
+            Container(
+                padding: EdgeInsets.only(right: 12),
+                child: FlatButton(
+                  onPressed: () {
+                    setState(() {
+                      if (scores.autoDetails.parkedRobots == 0)
+                        scores.updateAutonomus(parkedRobots: 1);
+                      else
+                        scores.updateAutonomus(parkedRobots: 0);
+                    });
+                  },
+                  child: Text('Parked'),
+                  color: scores.autoDetails.parkedRobots == 1
+                      ? Colors.green
+                      : Colors.grey,
+                ))
           ],
         ),
         Row(
           children: [
             SizedBox(width: 13),
             Text('Wobble Goals Delivered: '),
-            Slider(
-              activeColor: Colors.green,
-              value: 1.0 * scores.autoDetails.wobblesDelivered,
-              onChanged: (val) {
-                setState(() {
-                  scores.updateAutonomus(wobblesDelivered: val.round());
-                });
-              },
-              min: 0.0,
-              max: 2.0,
-              divisions: 2,
-              label: scores.autoDetails.wobblesDelivered.toString(),
-            ),
-            Text(scores.autoDetails.wobblesDelivered.toString())
+            Text(scores.autoDetails.wobblesDelivered.toString()),
+            Spacer(),
+            Container(
+                width: 0.40 * MediaQuery.of(context).size.width,
+                child: Slider(
+                  activeColor: Colors.green,
+                  value: 1.0 * scores.autoDetails.wobblesDelivered,
+                  onChanged: (val) {
+                    setState(() {
+                      scores.updateAutonomus(wobblesDelivered: val.round());
+                    });
+                  },
+                  min: 0.0,
+                  max: 2.0,
+                  divisions: 2,
+                  label: scores.autoDetails.wobblesDelivered.toString(),
+                )),
           ],
         ),
         Row(
           children: [
             SizedBox(width: 13),
             Text('Power Shots Knocked: '),
-            Slider(
-              activeColor: Colors.green,
-              value: 1.0 * scores.autoDetails.powershotsKnocked,
-              onChanged: (val) {
-                setState(() {
-                  scores.updateAutonomus(powershotsKnocked: val.round());
-                });
-              },
-              min: 0.0,
-              max: 3.0,
-              divisions: 3,
-              label: scores.autoDetails.powershotsKnocked.toString(),
-            ),
-            Text(scores.autoDetails.powershotsKnocked.toString())
+            Text(scores.autoDetails.powershotsKnocked.toString()),
+            Spacer(),
+            Container(
+              width: 0.40 * MediaQuery.of(context).size.width,
+              child: Slider(
+                activeColor: Colors.green,
+                value: 1.0 * scores.autoDetails.powershotsKnocked,
+                onChanged: (val) {
+                  setState(() {
+                    scores.updateAutonomus(powershotsKnocked: val.round());
+                  });
+                },
+                min: 0.0,
+                max: 3.0,
+                divisions: 3,
+                label: scores.autoDetails.powershotsKnocked.toString(),
+              ),
+            )
           ],
         ),
         Row(
           children: [
             SizedBox(width: 13),
             Text('Low Goal: '),
+            Spacer(),
             IconButton(
                 icon: Icon(
                   Icons.remove,
@@ -114,6 +125,7 @@ class _AutonomusScoreState extends State<AutonomusScore> {
           children: [
             SizedBox(width: 13),
             Text('Mid Goal: '),
+            Spacer(),
             IconButton(
                 icon: Icon(Icons.remove, color: Colors.green),
                 onPressed: () {
@@ -137,6 +149,7 @@ class _AutonomusScoreState extends State<AutonomusScore> {
           children: [
             SizedBox(width: 13),
             Text('High Goal: '),
+            Spacer(),
             IconButton(
                 icon: Icon(Icons.remove, color: Colors.green),
                 onPressed: () {
