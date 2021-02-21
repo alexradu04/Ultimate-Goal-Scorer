@@ -15,7 +15,7 @@ class _TeleOpState extends State<TeleOp> {
         child: Column(
       children: [
         Text(
-          'Tele-Op Period',
+          'Tele-Op',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
@@ -26,6 +26,7 @@ class _TeleOpState extends State<TeleOp> {
           children: [
             SizedBox(width: 13),
             Text('Low Goal: '),
+            Spacer(),
             IconButton(
                 icon: Icon(Icons.remove, color: Colors.orange),
                 onPressed: () {
@@ -49,6 +50,7 @@ class _TeleOpState extends State<TeleOp> {
           children: [
             SizedBox(width: 13),
             Text('Mid Goal: '),
+            Spacer(),
             IconButton(
                 icon: Icon(Icons.remove, color: Colors.orange),
                 onPressed: () {
@@ -72,6 +74,7 @@ class _TeleOpState extends State<TeleOp> {
           children: [
             SizedBox(width: 13),
             Text('High Goal: '),
+            Spacer(),
             IconButton(
                 icon: Icon(Icons.remove, color: Colors.orange),
                 onPressed: () {
